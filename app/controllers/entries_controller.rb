@@ -3,8 +3,8 @@ class EntriesController < ApiController
 
   # GET /entries
   def index
-    @entries = Entry.all.includes(:feelings)
-    render json: @entries
+    @entries = Entry.all
+    render json: @entries.to_json(include:[:feelings])
   end
 
   # GET /entries/1
