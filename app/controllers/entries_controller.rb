@@ -9,7 +9,8 @@ class EntriesController < ApiController
 
   # GET /entries/1
   def show
-    render json: @entry
+    @entry = Entry.find(params[:id])
+    render json: @entry.to_json(include:[:feelings]) 
   end
 
   # POST /entries
