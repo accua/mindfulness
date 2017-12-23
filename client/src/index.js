@@ -9,6 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers';
 import EntriesList from './components/entriesList';
 import EntryShow from './components/entryShow';
+import CreateEntry from './components/entryCreate';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -17,6 +18,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
+          <Route path="/entries/new" component={CreateEntry} />
           <Route path="/entries/:id" component={EntryShow} />
           <Route path="/" component={EntriesList} />
         </Switch>

@@ -12,21 +12,22 @@ class EntriesList extends Component {
   // TODO: Change the keys from Math.random, add more styling, make titles links to the entry_show page for that object, show ratings.
   renderEntries(entry) {
     return _.map(this.props.entries, entry => {
+      console.log(entry.feelings);
       const title = entry.title;
       const id = entry.id
       return (
         <div key={Math.random}>
           <li className="list-group-item" key={id}>
             <Link to={`/entries/${id}`}>
-            {title}
+            {entry && title}
             </Link>
             <ul>
               <li className="list-group-item" key={Math.random}>
-                {entry.feelings[0]['textbox']}
+                {entry && entry.feelings[0] && entry.feelings[0]['textbox']}
               </li>
               <br />
               <li className="list-group-item" key={Math.random}>
-                {entry.feelings[1]['textbox']}
+                {entry && entry.feelings[1] && entry.feelings[1]['textbox']}
               </li>
             </ul>
           </li>
@@ -39,6 +40,11 @@ class EntriesList extends Component {
   render() {
     return (
       <div>
+        <div className="text-xs-right">
+          <Link className="btn btn-primary" to="/entries/new">
+            Add a Post
+          </Link>
+        </div>
         <h3>Entries</h3>
         <ul className="list-group">
           {this.renderEntries()}
