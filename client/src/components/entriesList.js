@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchEntries } from '../actions';
+import { fetchEntries, fetchEntry } from '../actions';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
-class EntriesIndex extends Component {
+class EntriesList extends Component {
   //lifecycle method
   componentDidMount() {
     this.props.fetchEntries();
@@ -11,12 +12,14 @@ class EntriesIndex extends Component {
   // TODO: Change the keys from Math.random, add more styling, make titles links to the entry_show page for that object, show ratings.
   renderEntries(entry) {
     return _.map(this.props.entries, entry => {
-      console.log(entry);
       const title = entry.title;
+      const id = entry.id
       return (
         <div key={Math.random}>
-          <li className="list-group-item" key={entry.id}>
+          <li className="list-group-item" key={id}>
+            <Link to={`/entries/${id}`}>
             {title}
+            </Link>
             <ul>
               <li className="list-group-item" key={Math.random}>
                 {entry.feelings[0]['textbox']}
@@ -49,4 +52,4 @@ function mapStateToProps(state) {
   return { entries: state.entries };
 }
 
-export default connect(mapStateToProps, { fetchEntries })(EntriesIndex);
+export default connect(mapStateToProps, { fetchEntries })(EntriesList);
