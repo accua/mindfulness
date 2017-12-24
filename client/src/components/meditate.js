@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-class EntryCreate extends Component {
+class Meditate extends Component {
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    this.props.updateEntry(id);
+  }
+
 
   renderField(field) {
     const { meta: { touched, error } } = field;
@@ -26,20 +31,13 @@ class EntryCreate extends Component {
   }
 
   onSubmit(values) {
-    let entry = {
-      title: values.title
-    };
-    let beforeFeeling = {
-      rating: values.beforeRating,
-      textbox: values.beforeTextbox,
-      before_or_after: 0
-    };
-    let afterFeeling = {
-      rating: values.afterRating,
-      textbox: values.afterTextbox,
+    let feeling = {
+      // entry_id: this.props.entry.id
+      rating: values.rating,
+      textbox: values.textbox,
       before_or_after: 1
     }
-    this.props.createEntry({ entry, beforeFeeling, afterFeeling }, () => {
+    this.props.updateEntry({ feeling }, () => {
       this.props.history.push('/')
     });
   }
@@ -50,34 +48,17 @@ class EntryCreate extends Component {
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
-          label="Title"
-          name="title"
-          component={this.renderField}
-        />
-        <Field
-          label="Rating"
-          name="beforeRating"
-          component={this.renderField}
-        />
-        <Field
           label="Write about how you're feeling"
-          name="beforeTextbox"
+          name="textbox"
           type="text"
           component={this.renderField}
         />
         <Field
           label="Rating"
-          name="afterRating"
-          component={this.renderField}
-        />
-        <Field
-          label="Write about how you're feeling"
-          name="afterTextbox"
-          type="text"
+          name="rating"
           component={this.renderField}
         />
         <button type="submit" className="btn btn-primary">Submit</button>
-        <Link to="/" className="btn btn-danger">Cancel</Link>
       </form>
     );
   }
@@ -100,9 +81,15 @@ class EntryCreate extends Component {
 //   return errors;
 // }
 
+function mapStateToProps({ entries }, ownProps) {
+  console.log('state.entries: ', entries);
+
+  return { entry: entries[ownProps.match.params.id] };
+}
+
 export default reduxForm({
   // validate,
-  form: 'EntryCreateForm'
+  form: 'MeditateForm'
 })(
-  connect(null, actions)(EntryCreate)
+  connect(mapStateToProps, actions)(Meditate)
 );

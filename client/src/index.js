@@ -10,6 +10,7 @@ import reducers from './reducers';
 import EntriesList from './components/entriesList';
 import EntryShow from './components/entryShow';
 import CreateEntry from './components/entryCreate';
+import Meditate from './components/meditate';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -19,7 +20,9 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route path="/entries/new" component={CreateEntry} />
+          {/* <Route path="/entries/:id" component={AfterFeeling} /> */}
           <Route path="/entries/:id" component={EntryShow} />
+          {/* <Route path="/meditate" component={Meditate} /> */}
           <Route path="/" component={EntriesList} />
         </Switch>
       </div>

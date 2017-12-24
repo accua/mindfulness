@@ -9,7 +9,7 @@ class EntriesList extends Component {
   componentDidMount() {
     this.props.fetchEntries();
   }
-  // TODO: Change the keys from Math.random, add more styling, make titles links to the entry_show page for that object, show ratings.
+  // TODO: Change the keys from Math.random, add more styling.
   renderEntries(entry) {
     return _.map(this.props.entries, entry => {
       console.log(entry.feelings);

@@ -10,7 +10,6 @@ class EntryShow extends Component {
 
   render() {
     const { entry } = this.props;
-    console.log('props: ',this.props);
     if (!entry) {
       return <div>Loading...</div>
     }

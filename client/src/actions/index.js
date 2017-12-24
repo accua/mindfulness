@@ -5,6 +5,7 @@ const ROOT_URL ='/api';
 export const FETCH_ENTRIES = 'FETCH_ENTRIES'
 export const FETCH_ENTRY = 'FETCH_ENTRY'
 export const CREATE_ENTRY = 'CREATE_ENTRY'
+export const UPDATE_ENTRY = 'UPDATE_ENTRY'
 
 export function fetchEntries() {
   // setting up the promise
@@ -26,12 +27,21 @@ export function fetchEntry(id) {
 }
 
 export function createEntry(values, callback) {
-  console.log('values: ',values);
  const request = axios.post(`${ROOT_URL}/entries`, values)
     .then(() => callback());
 
- return {
-   type: CREATE_ENTRY,
-   payload: request
- };
+  return {
+    type: CREATE_ENTRY,
+    payload: request
+  };
 }
+
+// export function updateEntry(values, callback) {
+//  const request = axios.patch(`${ROOT_URL}/entries/${id}`, values)
+//     .then(() => callback());
+//
+//   return {
+//     type: UPDATE_ENTRY,
+//     payload: request
+//   };
+// }
