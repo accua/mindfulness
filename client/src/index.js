@@ -11,6 +11,7 @@ import EntriesList from './components/entriesList';
 import EntryShow from './components/entryShow';
 import CreateEntry from './components/entryCreate';
 import Meditate from './components/meditate';
+import './App.css';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -28,5 +29,5 @@ ReactDOM.render(
       </div>
     </BrowserRouter>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('.app-container'));
   registerServiceWorker();

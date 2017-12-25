@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchEntries, fetchEntry } from '../actions';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import Moment from 'react-moment';
 
 class EntriesList extends Component {
   //lifecycle method
@@ -12,26 +13,21 @@ class EntriesList extends Component {
   // TODO: Change the keys from Math.random, add more styling.
   renderEntries(entry) {
     return _.map(this.props.entries, entry => {
-      console.log(entry.feelings);
       const title = entry.title;
       const id = entry.id
+      const dateToFormat = entry.created_at
       return (
-        <div key={Math.random}>
-          <li className="list-group-item" key={id}>
-            <Link to={`/entries/${id}`}>
-            {entry && title}
-            </Link>
-            <ul>
-              <li className="list-group-item" key={Math.random}>
-                {entry && entry.feelings[0] && entry.feelings[0]['textbox']}
-              </li>
-              <br />
-              <li className="list-group-item" key={Math.random}>
-                {entry && entry.feelings[1] && entry.feelings[1]['textbox']}
-              </li>
-            </ul>
-          </li>
-          <br />
+        <div className="card text-center">
+          <div className="card-body">
+
+              <h4 className="card-title"><Link to={`/entries/${id}`}>{entry && title}
+            </Link></h4>
+            <p className="card-text">{entry && entry.feelings[1] && entry.feelings[1]['textbox']}</p>
+            <p className="card-text">{entry && entry.feelings[1] && <p>Rating: {entry.feelings[1]['rating']}</p>}</p>
+          </div>
+          <div className="card-footer text-muted">
+            <Moment fromNow>{dateToFormat}</Moment>
+          </div>
         </div>
       );
     });
@@ -41,14 +37,13 @@ class EntriesList extends Component {
     return (
       <div>
         <div className="text-xs-right">
-          <Link className="btn btn-primary" to="/entries/new">
-            Add a Post
+          <Link className="btn btn-primary btn-home" to="/entries/new">
+            Meditate
           </Link>
         </div>
-        <h3>Entries</h3>
-        <ul className="list-group">
+        <div>
           {this.renderEntries()}
-        </ul>
+        </div>
       </div>
     );
   }

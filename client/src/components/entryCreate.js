@@ -25,6 +25,39 @@ class EntryCreate extends Component {
     );
   }
 
+  renderRadio() {
+    return (
+      <div className="rating">
+        <p>Rating</p>
+        <div className="form-check form-check-inline">
+          <label className="form-check-label">
+            <input className="form-check-input" type="radio" value="1" /> 1
+          </label>
+        </div>
+        <div className="form-check form-check-inline">
+          <label className="form-check-label">
+            <input className="form-check-input" type="radio" value="2" /> 2
+          </label>
+        </div>
+        <div className="form-check form-check-inline">
+          <label className="form-check-label">
+            <input className="form-check-input" type="radio" value="3" /> 3
+          </label>
+        </div>
+        <div className="form-check form-check-inline">
+          <label className="form-check-label">
+            <input className="form-check-input" type="radio" value="4" /> 4
+          </label>
+        </div>
+        <div className="form-check form-check-inline">
+          <label className="form-check-label">
+            <input className="form-check-input" type="radio" value="5" /> 5
+          </label>
+        </div>
+      </div>
+    );
+  }
+
   onSubmit(values) {
     let entry = {
       title: values.title
@@ -55,29 +88,153 @@ class EntryCreate extends Component {
           component={this.renderField}
         />
         <Field
-          label="Rating"
-          name="beforeRating"
-          component={this.renderField}
-        />
-        <Field
           label="Write about how you're feeling"
           name="beforeTextbox"
           type="text"
           component={this.renderField}
         />
-        <Field
-          label="Rating"
-          name="afterRating"
-          component={this.renderField}
-        />
+        <div className="rating">
+          <p>Rating</p>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="beforeRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="1"
+              />
+              1
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                name="beforeRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="2"
+              />
+              2
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="beforeRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="3"
+              />
+              3
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="beforeRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="4"
+              />
+              4
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="beforeRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="5"
+              />
+              5
+            </label>
+          </div>
+        </div>
         <Field
           label="Write about how you're feeling"
           name="afterTextbox"
-          type="text"
+          type="area"
           component={this.renderField}
         />
+        <div className="rating">
+          <p>Rating</p>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="afterRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="1"
+              />
+              1
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                name="afterRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="2"
+              />
+              2
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="afterRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="3"
+              />
+              3
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="afterRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="4"
+              />
+              4
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <label>
+              <Field
+                label="Rating"
+                name="afterRating"
+                className="form-check-input"
+                component='input'
+                type="radio"
+                value="5"
+              />
+              5
+            </label>
+          </div>
+        </div>
         <button type="submit" className="btn btn-primary">Submit</button>
-        <Link to="/" className="btn btn-danger">Cancel</Link>
+        <Link to="/" className="btn btn-primary">Cancel</Link>
       </form>
     );
   }

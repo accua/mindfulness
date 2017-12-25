@@ -15,19 +15,22 @@ class EntryShow extends Component {
     }
 
     return (
-      <div>
-        <h3>{entry.title}</h3>
-        <div className="row">
-          <h6>Before Feeling:</h6>
-          <div className="col-lg-6">
-            {entry && entry.feelings[0] && <p>Rating: {entry.feelings[0]['rating']}</p>}
-            {entry && entry.feelings[0] && entry.feelings[0]['textbox']}
-          </div>
-          <h6>After Feeling:</h6>
-          <div className="col-lg-6">
-            {entry && entry.feelings[1] && entry.feelings[1]['rating']}
-            {entry && entry.feelings[1] && entry.feelings[1]['textbox']}
-          </div>
+      <div className="card text-center">
+        <div className="card-header">
+          <h3>{entry.title}</h3>
+        </div>
+        
+        <div className="card-body">
+          <h6>Before Feeling</h6>
+          <p className="card-text">{entry && entry.feelings[0] && entry.feelings[0]['textbox']}</p>
+          <p className="card-text">{entry && entry.feelings[0] && <p><strong>Rating</strong> {entry.feelings[0]['rating']}</p>}</p>
+          <hr />
+          <h6>After Feeling</h6>
+          <p className="card-text">{entry && entry.feelings[1] && entry.feelings[1]['textbox']}</p>
+          <p className="card-text">{entry && entry.feelings[1] && <p><strong>Rating</strong> {entry.feelings[1]['rating']}</p>}</p>
+        </div>
+        <div className="card-footer text-muted">
+          2 days ago
         </div>
       </div>
     );
