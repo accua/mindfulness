@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Moment from 'react-moment'
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -19,7 +20,7 @@ class EntryShow extends Component {
         <div className="card-header">
           <h3>{entry.title}</h3>
         </div>
-        
+
         <div className="card-body">
           <h6>Before Feeling</h6>
           <p className="card-text">{entry && entry.feelings[0] && entry.feelings[0]['textbox']}</p>
@@ -30,7 +31,7 @@ class EntryShow extends Component {
           <p className="card-text">{entry && entry.feelings[1] && <p><strong>Rating</strong> {entry.feelings[1]['rating']}</p>}</p>
         </div>
         <div className="card-footer text-muted">
-          2 days ago
+          <Moment fromNow>{entry.created_at}</Moment>
         </div>
       </div>
     );
