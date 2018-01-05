@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import EntriesReducer from './reducer_entries';
+import { reducer as FormReducer } from 'redux-form';
+import EntriesReducer from './reducerEntries';
 
 
 const rootReducer = combineReducers({
-  entries: EntriesReducer
+  entries: EntriesReducer,
+  form: FormReducer
 });
 
 export default rootReducer;
