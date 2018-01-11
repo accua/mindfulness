@@ -8,7 +8,7 @@ _The mindfulness application sought embody the idea that a user experience on a 
 
 ## Setup/Installation Requirements
 
-* You can check out our project [here](mindfulnesswithmom.com)
+* You can check out our project [here](http://mindfulnesswithmom.com)
 
 
 ## Technologies Used
