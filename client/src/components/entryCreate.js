@@ -81,161 +81,170 @@ class EntryCreate extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <Field
-          label="Title"
-          name="title"
-          component={this.renderField}
-        />
-        <Field
-          label="Write about how you're feeling"
-          name="beforeTextbox"
-          type="text"
-          component={this.renderField}
-        />
-        <div className="rating">
-          <p>Rating</p>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="beforeRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="1"
-              />
-              1
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                name="beforeRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="2"
-              />
-              2
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="beforeRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="3"
-              />
-              3
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="beforeRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="4"
-              />
-              4
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="beforeRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="5"
-              />
-              5
-            </label>
+      <div>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <a href="/" className="logo mx-auto d-block"></a>
           </div>
         </div>
-        <Field
-          label="Write about how you're feeling"
-          name="afterTextbox"
-          type="area"
-          component={this.renderField}
-        />
-        <div className="rating">
-          <p>Rating</p>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="afterRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="1"
-              />
-              1
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                name="afterRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="2"
-              />
-              2
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="afterRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="3"
-              />
-              3
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="afterRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="4"
-              />
-              4
-            </label>
-          </div>
-          <div className="form-check form-check-inline">
-            <label>
-              <Field
-                label="Rating"
-                name="afterRating"
-                className="form-check-input"
-                component='input'
-                type="radio"
-                value="5"
-              />
-              5
-            </label>
-          </div>
+        <div className="container">
+          <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+            <Field
+              label="Title"
+              name="title"
+              component={this.renderField}
+            />
+            <Field
+              label="Write about how you're feeling"
+              name="beforeTextbox"
+              type="text"
+              component={this.renderField}
+            />
+            <div className="rating">
+              <p>Rating</p>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="beforeRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="1"
+                  />
+                  1
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    name="beforeRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="2"
+                  />
+                  2
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="beforeRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="3"
+                  />
+                  3
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="beforeRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="4"
+                  />
+                  4
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="beforeRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="5"
+                  />
+                  5
+                </label>
+              </div>
+            </div>
+            <Field
+              label="Write about how you're feeling"
+              name="afterTextbox"
+              type="area"
+              component={this.renderField}
+            />
+            <div className="rating">
+              <p>Rating</p>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="afterRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="1"
+                  />
+                  1
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    name="afterRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="2"
+                  />
+                  2
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="afterRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="3"
+                  />
+                  3
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="afterRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="4"
+                  />
+                  4
+                </label>
+              </div>
+              <div className="form-check form-check-inline">
+                <label>
+                  <Field
+                    label="Rating"
+                    name="afterRating"
+                    className="form-check-input"
+                    component='input'
+                    type="radio"
+                    value="5"
+                  />
+                  5
+                </label>
+              </div>
+            </div>
+          <button type="submit" className="btn btn-custom btn-primary">Submit</button>
+          <Link to="/" className="btn btn-custom btn-primary">Cancel</Link>
+        </form>
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <Link to="/" className="btn btn-primary">Cancel</Link>
-      </form>
+      </div>
     );
   }
 }

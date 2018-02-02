@@ -36,13 +36,20 @@ class EntriesList extends Component {
   render() {
     return (
       <div>
-        <div className="text-xs-right">
-          <Link className="btn btn-primary btn-home" to="/entries/new">
-            Meditate
-          </Link>
+        <div class="jumbotron jumbotron-fluid mindfulness-hero">
+          <div class="container">
+            <a href="/" className="logo mx-auto d-block"></a>
+          </div>
         </div>
-        <div>
-          {this.renderEntries()}
+        <div className="container">
+          <div className="text-xs-right">
+            <Link className="btn btn-primary btn-home" to="/entries/new">
+              Meditate
+            </Link>
+          </div>
+          <div>
+            {this.renderEntries()}
+          </div>
         </div>
       </div>
     );

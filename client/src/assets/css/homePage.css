@@ -1,0 +1,429 @@
+html{
+    height: 100%;
+}
+
+/*
+////////////////
+/// NAVIGATION
+////////////////
+*/
+/*
+.navbar {
+  background-color: rgba(56,56,56,0.1);
+}
+
+.navbar li {
+  padding-left: 3em;
+}
+
+.navbar a {
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+} */
+
+/*
+///////////
+/// HERO
+///////////
+*/
+
+#homePageHero {
+  background: url(../images/hero.jpg) no-repeat center;
+  height: 800px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: white;
+  text-shadow: 1px 1px black;
+  margin-bottom: 0;
+}
+
+#homePageHero h1 {
+  padding-top: 2em;
+  font-size: 7em;
+}
+
+@media (max-width: 700px) {
+  #homePageHero {
+    text-align: center;
+  }
+
+  #homePageHero h1{
+    font-size: 4em;
+    margin-top: 30%;
+  }
+}
+
+.lead {
+  margin-left: 0.5em;
+}
+
+
+/*
+/////////////////////
+/// LOGIN CONTAINER
+/////////////////////
+*/
+
+#login {
+    background-color: #6a9a9e;
+    margin-top: 0;
+    height: 40em;
+}
+
+#login-h1 {
+  margin: 0 auto;
+  padding-top: 5em;
+  color: white;
+  text-align: center;
+}
+
+#login-row {
+  padding-top: 10%;
+}
+#login-row .card {
+  background-color: transparent;
+  border: none;
+}
+
+/*
+/////////////////////////////////
+/// BUTTON AND BUTTON ANIMATION
+/////////////////////////////////
+*/
+
+.btn-cont {
+  text-align: center;
+}
+.btn-cont .btn {
+  position: relative;
+  padding: 20px 70px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 1.125em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-cont .btn:hover {
+  border: none;
+}
+.btn-cont .btn:hover .line-1 {
+  -webkit-animation: move1 2000ms infinite ease;
+          animation: move1 2000ms infinite ease;
+}
+.btn-cont .btn:hover .line-2 {
+  -webkit-animation: move2 2000ms infinite ease;
+          animation: move2 2000ms infinite ease;
+}
+.btn-cont .btn:hover .line-3 {
+  -webkit-animation: move3 2000ms infinite ease;
+          animation: move3 2000ms infinite ease;
+}
+.btn-cont .btn:hover .line-4 {
+  -webkit-animation: move4 2000ms infinite ease;
+          animation: move4 2000ms infinite ease;
+}
+.btn-cont .line-1 {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  background-color: white;
+  left: 0;
+  bottom: 0;
+}
+.btn-cont .line-2 {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  left: 0;
+  top: 0;
+}
+.btn-cont .line-3 {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  background-color: white;
+  right: 0;
+  top: 0;
+}
+.btn-cont .line-4 {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  right: 0;
+  bottom: 0;
+}
+
+@-webkit-keyframes move1 {
+  0% {
+    height: 100%;
+    bottom: 0;
+  }
+  54% {
+    height: 0;
+    bottom: 100%;
+  }
+  55% {
+    height: 0;
+    bottom: 0;
+  }
+  100% {
+    height: 100%;
+    bottom: 0;
+  }
+}
+
+@keyframes move1 {
+  0% {
+    height: 100%;
+    bottom: 0;
+  }
+  54% {
+    height: 0;
+    bottom: 100%;
+  }
+  55% {
+    height: 0;
+    bottom: 0;
+  }
+  100% {
+    height: 100%;
+    bottom: 0;
+  }
+}
+@-webkit-keyframes move2 {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes move2 {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@-webkit-keyframes move3 {
+  0% {
+    height: 100%;
+    top: 0;
+  }
+  54% {
+    height: 0;
+    top: 100%;
+  }
+  55% {
+    height: 0;
+    top: 0;
+  }
+  100% {
+    height: 100%;
+    top: 0;
+  }
+}
+@keyframes move3 {
+  0% {
+    height: 100%;
+    top: 0;
+  }
+  54% {
+    height: 0;
+    top: 100%;
+  }
+  55% {
+    height: 0;
+    top: 0;
+  }
+  100% {
+    height: 100%;
+    top: 0;
+  }
+}
+@-webkit-keyframes move4 {
+  0% {
+    width: 0;
+    right: 0;
+  }
+  55% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 100%;
+  }
+}
+@keyframes move4 {
+  0% {
+    width: 0;
+    right: 0;
+  }
+  55% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 100%;
+  }
+}
+
+/*
+/////////////////////////////
+/// IMAGE AND TEXT CONTAINER
+/////////////////////////////
+*/
+
+.container-fluid {
+  margin: auto 0;
+}
+
+#info-container {
+  background-color: #325c6c;
+  margin: 10% auto;
+  height: 35em;
+}
+
+#info-card {
+  border-radius: none;
+}
+
+#info-card-body {
+  padding: 0 0 5em 0;
+}
+
+.card-img {
+  height: 35em;
+  background: url(../images/denys-nevozhai-191635.jpg) no-repeat center;
+  background-size: cover;
+  border: none;
+  border-radius: none;
+}
+
+#info-text {
+  margin: 10% auto;
+}
+
+#info-text .card {
+  background-color: transparent;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  #info-container {
+    margin: 0 auto;
+  }
+}
+/*
+//////////////////////
+/// FOOTER
+//////////////////////
+*/
+
+#myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
+}
+
+#myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h3 {
+    font-size: 30px;
+    margin-top: 30px;
+    color: #fff;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .btn {
+    color: white;
+    background-color: #2a4383;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}
