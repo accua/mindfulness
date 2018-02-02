@@ -31,6 +31,7 @@ html{
 
 #homePageHero {
   background: url(../images/hero.jpg) no-repeat center;
+  background-size: cover;
   height: 800px;
   font-family: 'Lato', sans-serif;
   font-weight: 900;
