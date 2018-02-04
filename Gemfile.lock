@@ -130,6 +130,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   byebug
   foreman (~> 0.82.0)
   knock (~> 2.1.1)
