@@ -1,4 +1,4 @@
-class FeelingsController < ApiController
+class FeelingsController < ApplicationController
   before_action :set_feeling, only: [:show, :update, :destroy]
 
   # GET /feelings
